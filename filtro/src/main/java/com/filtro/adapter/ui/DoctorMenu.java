@@ -14,11 +14,9 @@ import java.util.Scanner;
 
 public class DoctorMenu {
     public static void main(String[] args) {
-        // Initialize repositories with ConnectMysqlFactory
         DoctorPersistenceImpl doctorRepository = new DoctorPersistenceImpl(ConnectMysqlFactory.crearConexion());
         SpecialtyPersistenceImpl specialtyRepository = new SpecialtyPersistenceImpl(ConnectMysqlFactory.crearConexion());
         
-        // Initialize use cases
         DoctorCRUD doctorCRUD = new DoctorCRUD(doctorRepository);
         SpecialtyCRUD specialtyCRUD = new SpecialtyCRUD(specialtyRepository);
         
@@ -137,7 +135,6 @@ public class DoctorMenu {
             System.out.print("Enter Doctor ID to update: ");
             int doctorId = Integer.parseInt(scanner.nextLine());
             
-            // Get current doctor info
             Optional<Doctor> doctorOpt = doctorCRUD.getDoctor(doctorId);
             if (doctorOpt.isEmpty()) {
                 System.out.println("Doctor not found.");

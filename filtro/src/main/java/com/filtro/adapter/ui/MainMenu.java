@@ -18,12 +18,10 @@ public class MainMenu {
     private final Scanner scanner;
 
     public MainMenu() {
-        // Initialize repositories
         PatientPersistenceImpl patientRepository = new PatientPersistenceImpl(ConnectMysqlFactory.crearConexion());
         DoctorPersistenceImpl doctorRepository = new DoctorPersistenceImpl(ConnectMysqlFactory.crearConexion());
         AppointmentPersistenceImpl appointmentRepository = new AppointmentPersistenceImpl(ConnectMysqlFactory.crearConexion());
         
-        // Initialize use cases
         this.patientCRUD = new PatientCRUD(patientRepository);
         this.doctorCRUD = new DoctorCRUD(doctorRepository);
         this.appointmentCRUD = new AppointmentCRUD(appointmentRepository);

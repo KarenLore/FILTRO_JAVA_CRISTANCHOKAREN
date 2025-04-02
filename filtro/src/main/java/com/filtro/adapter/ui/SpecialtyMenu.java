@@ -79,7 +79,6 @@ public class SpecialtyMenu {
     private void updateSpecialty() {
         System.out.println("\n--- UPDATE SPECIALTY ---");
         
-        // List specialties
         System.out.println("\nCurrent Specialties:");
         specialtyCRUD.getAllSpecialties().forEach(s -> 
             System.out.println(s.getId() + ": " + s.getName()));
@@ -88,7 +87,6 @@ public class SpecialtyMenu {
         int specialtyId = scanner.nextInt();
         scanner.nextLine();
         
-        // Get current specialty info
         Optional<Specialty> specialtyOpt = specialtyCRUD.getSpecialty(specialtyId);
         if (specialtyOpt.isEmpty()) {
             System.out.println("Specialty not found.");
@@ -115,7 +113,6 @@ public class SpecialtyMenu {
     private void deleteSpecialty() {
         System.out.println("\n--- DELETE SPECIALTY ---");
         
-        // List specialties
         System.out.println("\nCurrent Specialties:");
         specialtyCRUD.getAllSpecialties().forEach(s -> 
             System.out.println(s.getId() + ": " + s.getName()));

@@ -20,7 +20,6 @@ public class Doctor {
         this.scheduleEnd = scheduleEnd;
     }
 
-    // Getters and Setters
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
     public String getName() { return name; }

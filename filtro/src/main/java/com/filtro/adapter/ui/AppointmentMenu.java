@@ -126,7 +126,6 @@ public class AppointmentMenu {
                 return;
             }
             
-            // Create appointment
             Appointment appointment = appointmentCRUD.createAppointment(
                 patientId, doctorId, dateTime, AppointmentStatus.SCHEDULED);
             
@@ -181,7 +180,6 @@ public class AppointmentMenu {
             System.out.print("Enter Appointment ID to update: ");
             int appointmentId = Integer.parseInt(scanner.nextLine());
             
-            // Get current appointment
             Optional<Appointment> appointmentOpt = appointmentCRUD.getAppointment(appointmentId);
             if (appointmentOpt.isEmpty()) {
                 System.out.println("Appointment not found.");
